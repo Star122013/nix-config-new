@@ -27,12 +27,33 @@
           programs.mango.enable = true;
           hj = {
             packages = with pkgs; [
-
+              wl-clip-persist
+              wl-clipboard
+              cliphist
+              grim
+              swappy
+              slurp
               xdg-desktop-portal
               xdg-desktop-portal-wlr
               xdg-desktop-portal-gtk
             ];
             files.".config/mango".source = ./../../../dotfiles/mango;
+            files.".config/swappy/config".text = ''
+              [Default]
+              save_dir=$HOME/Pictures/Screenshots
+              save_filename_format=screenshot-%Y%m%d-%H%M%S.png
+              show_panel=false
+              line_size=3
+              text_size=15
+              text_font=sans-serif
+              paint_mode=brush
+              early_exit=false
+              fill_shape=false
+              auto_save=false
+              custom_color=rgba(255,0,0,1)
+              transparent=false
+              transparency=50
+            '';
           };
         };
       };

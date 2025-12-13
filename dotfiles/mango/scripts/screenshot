@@ -1,0 +1,36 @@
+#!/bin/bash
+# 截图脚本 - 支持区域/全屏截图并调用swappy编辑
+
+# 创建截图目录
+mkdir -p "$HOME/Pictures/Screenshots"
+
+case "$1" in
+    "area")
+        # 区域截图 → swappy编辑
+        grim -g "$(slurp)" - | swappy -f -
+        ;;
+    "area-save")
+        # 区域截图 → swappy编辑 → 自动保存
+        grim -g "$(slurp)" - | swappy -f - -o - > "$HOME/Pictures/Screenshots/$(date +'%Y%m%d-%H%M%S').png"
+        ;;
+    "full")
+        # 全屏截图 → swappy编辑
+        grim - | swappy -f -
+        ;;
+    "full-save")
+        # 全屏截图 → swappy编辑 → 自动保存
+        grim - | swappy -f - -o - > "$HOME/Pictures/Screenshots/$(date +'%Y%m%d-%H%M%S').png"
+        ;;
+    "area-clipboard")
+        # 区域截图 → swappy编辑 → 复制到剪贴板
+        grim -g "$(slurp)" - | swappy -f - -o - | wl-copy
+        ;;
+    "full-clipboard")
+        # 全屏截图 → swappy编辑 → 复制到剪贴板
+        grim - | swappy -f - -o - | wl-copy
+        ;;
+    *)
+        echo "Usage: $0 {area|area-save|full|full-save|area-clipboard|full-clipboard}"
+        exit 1
+        ;;
+esac

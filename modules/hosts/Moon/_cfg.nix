@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }:
 {
@@ -15,6 +14,7 @@
     network.network-manager = true;
     security.enable = true;
     username = "kiana";
+    nushell.enable = true;
   };
 
   desktop = {
