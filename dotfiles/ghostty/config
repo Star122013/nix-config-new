@@ -1,0 +1,33 @@
+# ===
+# === 基本设置
+# ===
+
+# 英文字体(可以使用 CLI 生成有效值列表:ghostty +list-fonts)
+font-family = "IosevkaCustom Nerd Font Mono"
+# 中文字体
+font-family = "LXGW WenKai Screen"
+
+font-family = "Fluent Emoji Color"
+# 字体大小
+font-size = 14.6
+# 自动复制选中文本到系统剪切板
+copy-on-select = clipboard
+# 输入文本时隐藏鼠标
+mouse-hide-while-typing = true
+# 确认关闭窗口时不显示确认提示
+confirm-close-surface = false
+
+# ===
+# === 主题
+# ===
+# theme = "Catppuccin Frappe"
+background-opacity = 0.9
+window-decoration = false
+
+# ===
+# === 按键绑定
+# ===
+
+# 上下翻页
+keybind = ctrl+j=scroll_page_up
+keybind = ctrl+k=scroll_page_down

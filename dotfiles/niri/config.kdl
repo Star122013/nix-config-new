@@ -1,0 +1,11 @@
+include "config/input.kdl"
+include "config/monitor.kdl"
+include "config/animations.kdl"
+include "config/environment.kdl"
+include "config/rules.kdl"
+include "config/execs.kdl"
+include "config/layout.kdl"
+include "config/keybinds.kdl"
+// WARN: seems broken
+include "config/switcher.kdl"
+

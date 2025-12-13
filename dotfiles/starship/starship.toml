@@ -1,0 +1,112 @@
+# ~/.config/starship.toml
+
+# 1. 配色板
+palette = "catppuccin_mocha"
+
+# 2. 布局定义
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration
+$character"""
+
+# 3. 模块配置
+
+[username]
+show_always = true
+style_user = "bold peach"
+style_root = "bold red"
+format = "[$user]($style) "
+
+[hostname]
+ssh_only = false
+style = "bold mauve"
+format = "[on](overlay0) [$hostname]($style) "
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncation_symbol = "…/"
+format = "[in](overlay0) [$path]($style) "
+
+# --- Git 部分 (Emoji + 宽松间距) ---
+
+[git_branch]
+symbol = "🌿 "
+style = "bold green"
+format = "[on](overlay0) [$symbol$branch]($style) "
+
+[git_state]
+style = "bg:red fg:base" 
+rebase = "🔨 REBASING"
+merge = "🔀 MERGING"
+revert = "⏪ REVERTING"
+cherry_pick = "🍒 PICKING"
+bisect = "🧐 BISECTING"
+am = "📧 AM"
+format = ' [($state( $progress_current/$progress_total))](bold red) '
+
+[git_status]
+style = "bold maroon"
+# 格式保持不变，间距在下方定义中调整
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+# --- 核心修改：在 Emoji 和 ${count} 之间加了空格 ---
+conflicted = "💥 "          # 冲突
+ahead = "🚀 ${count} "      # 领先
+behind = "🐢 ${count} "     # 落后
+diverged = "🚧 "            # 分叉
+up_to_date = ""
+untracked = "✨ ${count} "  # 未追踪
+stashed = "💊 ${count} "    # 贮藏
+modified = "📝 ${count} "   # 修改
+staged = "📦 ${count} "     # 暂存
+renamed = "🏷️ ${count} "    # 重命名
+deleted = "🗑️ ${count} "    # 删除
+
+# --- 结束 Git 部分 ---
+
+[cmd_duration]
+min_time = 2000
+style = "bold yellow"
+format = " [took](overlay0) [$duration]($style)"
+
+[character]
+success_symbol = "[╰─>](bold teal)"
+error_symbol = "[╰─>](bold red)"
+
+[package]
+disabled = true
+
+# 4. Catppuccin Mocha 配色定义
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

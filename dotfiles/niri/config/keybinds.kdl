@@ -1,0 +1,39 @@
+/*
+██╗  ██╗███████╗██╗   ██╗██████╗ ██╗███╗   ██╗██████╗ ███████╗
+██║ ██╔╝██╔════╝╚██╗ ██╔╝██╔══██╗██║████╗  ██║██╔══██╗██╔════╝
+█████╔╝ █████╗   ╚████╔╝ ██████╔╝██║██╔██╗ ██║██║  ██║███████╗
+██╔═██╗ ██╔══╝    ╚██╔╝  ██╔══██╗██║██║╚██╗██║██║  ██║╚════██║
+██║  ██╗███████╗   ██║   ██████╔╝██║██║ ╚████║██████╔╝███████║
+╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝
+*/
+binds {
+    Mod+Shift+Slash     { show-hotkey-overlay; }
+    Mod+Q               { close-window; }
+    Mod+Return          { spawn "foot"; }
+    Mod+B               { spawn "firefox"; }
+    Mod+E               { spawn "nautilus"; }
+    Mod+Space           { spawn "vicinae" "toggle"; }
+    Mod+F               { fullscreen-window; }
+    Mod+T               { toggle-window-floating; }
+    Mod+Left            { focus-column-left; }
+    Mod+Right           { focus-column-right; }
+    Mod+Up              { focus-workspace-up; }
+    Mod+Down            { focus-workspace-down; }
+    Mod+Shift+Left      { move-column-left; }
+    Mod+Shift+Right     { move-column-right; }
+    Mod+Shift+Up        { move-column-to-workspace-up; }
+    Mod+Shift+Down      { move-column-to-workspace-down; }
+    Mod+R               { switch-preset-column-width; }
+    Mod+1               { focus-workspace "browser"; }
+    Mod+2               { focus-workspace "code"; }
+    Mod+3               { focus-workspace "chat"; }
+    Mod+Tab             { toggle-overview; }
+    Print               { screenshot; }
+    Alt+Print           { screenshot-screen; }
+    Ctrl+Print          { screenshot-window write-to-disk=true; }
+
+    // noctalia
+    Mod+V               { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Mod+L               { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+}
+

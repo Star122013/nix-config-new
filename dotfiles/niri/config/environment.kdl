@@ -1,0 +1,25 @@
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "gtk3"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    NIXOS_OZONE_WL "1"
+    EDITOR "nvim"
+    MOZ_ENABLE_WAYLAND "1"
+    DISPLAY ":1"
+    GTK_THEME "Papirus"
+}
+// Miscellaneous Settings
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
+hotkey-overlay {
+    skip-at-startup
+}
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+    hide-when-typing
+}
+debug {
+    honor-xdg-activation-with-invalid-serial
+}

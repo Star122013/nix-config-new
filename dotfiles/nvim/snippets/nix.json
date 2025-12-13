@@ -1,0 +1,40 @@
+{
+  "Hjem/Nix Mine Module": {
+    "prefix": "aspects",
+    "body": [
+    "{...}:",
+    "{flake.aspects.${1:aspects} = {",
+    "nixos =",
+      "{",
+      "  config,",
+      "  lib,",
+      "  pkgs,",
+      "  ...",
+      "}:",
+      "let",
+      "  inherit (lib) mkOption types mkIf;",
+      "  cfg = config.mine.${2:CHANGEME};",
+      "in",
+      "{",
+      "  options.mine.$2 = {",
+      "    enable = mkOption {",
+      "      type = types.bool;",
+      "      default = false;",
+      "      description = \"Enable $2.\";",
+      "    };",
+      "",
+      "    package = mkOption {",
+      "      type = types.package;",
+      "      default = pkgs.$2;",
+      "      description = \"The $2 package to install.\";",
+      "    };",
+      "  };",
+      "",
+      "  config = mkIf cfg.enable {",
+      "  };",
+      "};",
+      "}"
+    ],
+    "description": "Nix Module Options"
+  }
+}
