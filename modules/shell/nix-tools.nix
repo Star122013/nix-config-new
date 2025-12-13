@@ -35,6 +35,22 @@
             ];
           };
 
+          programs.nh = {
+            enable = true;
+            flake = "~/nix-config";
+            clean = {
+              dates = "weekly";
+              enable = false;
+              extraArgs = "--keep 5 --keep-since 3d";
+            };
+          };
+
+          nix.gc.automatic = true;
+          services.angrr = {
+            enable = true;
+            period = "2weeks";
+          };
+
           environment.systemPackages = [ pkgs.comma-with-db ];
 
           programs = {
@@ -42,7 +58,13 @@
             nix-index = {
               enable = true;
               package = pkgs.nix-index-with-db;
-              enableFishIntegration = true;
+            };
+            direnv = {
+              enable = true;
+              silent = true;
+              nix-direnv = {
+                enable = true;
+              };
             };
           };
         };

@@ -4,7 +4,10 @@
     "nixd@latest",
     "nixfmt-rfc-style@latest",
     "statix@latest",
-    "deadnix@latest"
+    "deadnix@latest",
+    "just@latest",
+    "shfmt@latest",
+    "tree-sitter@latest"
   ],
   "shell": {
     "init_hook": [

@@ -30,8 +30,6 @@
               eza
               zoxide
 
-              direnv
-              nix-direnv
               inputs.devbox.packages.${pkgs.stdenv.hostPlatform.system}.default
               nix-tree
 
