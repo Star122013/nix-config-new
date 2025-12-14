@@ -26,6 +26,7 @@
             packages = [
               pkgs.nushell
               pkgs.carapace
+              pkgs.carapace-bridge
             ];
             files.".config/nushell/config.nu".source = ./../../dotfiles/nushell/config.nu;
             files.".config/nushell/catppuccin.nu".source = ./../../dotfiles/nushell/catppuccin.nu;

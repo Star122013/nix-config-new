@@ -4,9 +4,11 @@ source ~/.config/nushell/alias.nu
 $env.config.buffer_editor = "nvim"
 $env.config.show_banner = false
 
-let carapace_completer = {|spans|
-    carapace $spans.0 nushell ...$spans | from json
-}
+# carapace complete
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir $"($nu.cache-dir)"
+carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
+source $"($nu.cache-dir)/carapace.nu"
 
 $env.config = {
   hooks: {
