@@ -27,6 +27,7 @@
     nvim.enable = true;
     foot.enable = true;
     fcitx.enable = true;
+    helix.enable = true;
   };
 
   shell = {
