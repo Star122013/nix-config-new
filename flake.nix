@@ -13,6 +13,8 @@
     hjem.inputs.nixpkgs.follows = "nixpkgs";
 
     # software
+    git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
+    git-hooks-nix.url = "github:cachix/git-hooks.nix";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     devbox.url = "github:jetify-com/devbox";

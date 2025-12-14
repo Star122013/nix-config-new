@@ -4,7 +4,6 @@
 }:
 {
   core = {
-    nix.lix = true;
     fonts.enable = true;
     grub.enable = true;
     hardware.bluetooth = true;

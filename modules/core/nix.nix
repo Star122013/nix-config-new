@@ -3,30 +3,13 @@
   flake.aspects.core = {
     nixos =
       {
-        config,
-        lib,
         pkgs,
+        lib,
         ...
       }:
-      let
-        inherit (lib) mkOption types mkIf;
-        cfg = config.core.nix;
-      in
       {
-        options.core.nix = {
-          dnix = mkOption {
-            type = types.bool;
-            default = false;
-            description = "Enable dnix.";
-          };
-          lix = mkOption {
-            type = types.bool;
-            default = true;
-            description = "Enable lix";
-          };
-        };
 
-        config = mkIf cfg.lix {
+        config = {
           nix = {
             package = pkgs.lixPackageSets.latest.lix;
             channel.enable = false;
@@ -36,7 +19,6 @@
               experimental-features = [
                 "nix-command"
                 "flakes"
-                "pipe-operator"
               ];
               trusted-users = [ "@wheel" ];
 

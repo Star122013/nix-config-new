@@ -1,3 +1,7 @@
 .devenv
 .direnv
 result
+.zed
+.cz.toml
+.pre-commit-config.yaml
+.jj

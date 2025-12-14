@@ -41,6 +41,7 @@
                 imagemagick
                 mate.atril
                 nix-tree
+                gcc
               ];
             };
           };

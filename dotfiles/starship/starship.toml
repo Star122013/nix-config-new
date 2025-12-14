@@ -1,88 +1,27 @@
-# ~/.config/starship.toml
-
-# 1. 配色板
+# ==============================================================================
+# 1. 全局配置 (必须放在最前面！)
+# ==============================================================================
+add_newline = true
 palette = "catppuccin_mocha"
 
-# 2. 布局定义
+# 核心布局：手动构建树状结构
 format = """
-$username\
-$hostname\
+[╭─](green)\
+$os\
 $directory\
+$nix_shell\
+$python\
+$nodejs\
+$rust\
+$golang\
 $git_branch\
-$git_state\
 $git_status\
-$cmd_duration
+$line_break\
 $character"""
 
-# 3. 模块配置
-
-[username]
-show_always = true
-style_user = "bold peach"
-style_root = "bold red"
-format = "[$user]($style) "
-
-[hostname]
-ssh_only = false
-style = "bold mauve"
-format = "[on](overlay0) [$hostname]($style) "
-
-[directory]
-style = "bold blue"
-truncation_length = 3
-truncation_symbol = "…/"
-format = "[in](overlay0) [$path]($style) "
-
-# --- Git 部分 (Emoji + 宽松间距) ---
-
-[git_branch]
-symbol = "🌿 "
-style = "bold green"
-format = "[on](overlay0) [$symbol$branch]($style) "
-
-[git_state]
-style = "bg:red fg:base" 
-rebase = "🔨 REBASING"
-merge = "🔀 MERGING"
-revert = "⏪ REVERTING"
-cherry_pick = "🍒 PICKING"
-bisect = "🧐 BISECTING"
-am = "📧 AM"
-format = ' [($state( $progress_current/$progress_total))](bold red) '
-
-[git_status]
-style = "bold maroon"
-# 格式保持不变，间距在下方定义中调整
-format = '([\[$all_status$ahead_behind\]]($style))'
-
-# --- 核心修改：在 Emoji 和 ${count} 之间加了空格 ---
-conflicted = "💥 "          # 冲突
-ahead = "🚀 ${count} "      # 领先
-behind = "🐢 ${count} "     # 落后
-diverged = "🚧 "            # 分叉
-up_to_date = ""
-untracked = "✨ ${count} "  # 未追踪
-stashed = "💊 ${count} "    # 贮藏
-modified = "📝 ${count} "   # 修改
-staged = "📦 ${count} "     # 暂存
-renamed = "🏷️ ${count} "    # 重命名
-deleted = "🗑️ ${count} "    # 删除
-
-# --- 结束 Git 部分 ---
-
-[cmd_duration]
-min_time = 2000
-style = "bold yellow"
-format = " [took](overlay0) [$duration]($style)"
-
-[character]
-success_symbol = "[╰─>](bold teal)"
-error_symbol = "[╰─>](bold red)"
-
-[package]
-disabled = true
-
-# 4. Catppuccin Mocha 配色定义
+# ==============================================================================
+# 2. 调色板定义 (Catppuccin Mocha)
+# ==============================================================================
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
@@ -110,3 +49,73 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+# ==============================================================================
+# 3. 模块配置
+# ==============================================================================
+
+# [OS 图标] - 增加 NixOS
+[os]
+disabled = false
+style = "bold sapphire" # 这里的蓝色很配 NixOS
+format = "[$symbol]($style)"
+
+[os.symbols]
+NixOS = " "   # NixOS 图标
+Windows = " "
+Ubuntu = " "
+Macos = " "
+Linux = " "
+Arch = " "
+
+# [目录]
+[directory]
+style = "bold blue"
+format = "[  $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+# [Python] - 已去掉 🐍，改为  
+[python]
+style = "bold lavender"
+symbol = " "
+format = '[ via ](overlay0)[${symbol}${version}]($style)'
+version_format = "v${raw}"
+
+# [Nix Shell] - 当你在 nix shell 环境中时显示
+[nix_shell]
+symbol = " "
+style = "bold sapphire"
+format = '[ via ](overlay0)[$symbol$state]($style)'
+impure_msg = "(impure)"
+pure_msg = "(pure)"
+
+# [Nodejs]
+[nodejs]
+style = "bold green"
+format = '[ via ](overlay0)[${symbol}${version}]($style)'
+symbol = " "
+
+# [Rust]
+[rust]
+style = "bold red"
+format = '[ via ](overlay0)[${symbol}${version}]($style)'
+symbol = " "
+
+# [Git Branch]
+[git_branch]
+symbol = " "
+style = "mauve"
+format = '[ on ](overlay0)[$symbol$branch]($style)'
+
+# [Git Status]
+[git_status]
+style = "bold red"
+format = '([$all_status$ahead_behind]($style))'
+
+# [提示符] - 第二行
+[character]
+success_symbol = "[╰─ :](bold green)"
+error_symbol = "[╰─ :](bold red)"
+vimcmd_symbol = "[╰─ ❮](green)"
