@@ -6,3 +6,7 @@ def gl [rows: int = 25] {
     | sort-by date
     | reverse
 }
+
+def ll [] {
+    eza --icons -a --group-directories-first -1 --no-user --long
+}

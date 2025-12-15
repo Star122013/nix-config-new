@@ -25,6 +25,7 @@
           alejandra
           statix
           deadnix
+          gh
           config.pre-commit.settings.enabledPackages
         ];
         shellHook = ''

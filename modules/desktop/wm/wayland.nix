@@ -26,6 +26,7 @@
               user = "kiana";
             };
           };
+          useTextGreeter = true;
         };
 
         systemd.user.services.polkit-kde-authentication-agent-1 = {
