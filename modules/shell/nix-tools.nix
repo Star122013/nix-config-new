@@ -11,6 +11,7 @@
       let
         inherit (lib) mkOption types mkIf;
         cfg = config.shell.nix-tools;
+        username = config.core.username;
       in
       {
         options.shell.nix-tools = {
@@ -37,7 +38,7 @@
 
           programs.nh = {
             enable = true;
-            flake = "~/nix-config";
+            flake = "/home/${username}/nix-config";
             clean = {
               dates = "weekly";
               enable = false;

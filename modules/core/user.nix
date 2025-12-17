@@ -12,12 +12,18 @@
         inherit (lib) mkOption types;
         inherit (lib.modules) mkAliasOptionModule;
         inherit (config.core) username;
+        cfg = config.core.hjem;
       in
       {
         options.core.username = mkOption {
           type = types.str;
           default = "kiana";
           description = "Sets the username for the system.";
+        };
+        options.core.hjem = mkOption {
+          type = types.bool;
+          default = true;
+          description = "Enable hjem.";
         };
         imports = [
           inputs.hjem.nixosModules.default
@@ -27,7 +33,7 @@
           (mkAliasOptionModule [ "hj" ] [ "hjem" "users" username ])
         ];
         config = {
-          hjem = {
+          hjem = lib.mkIf cfg {
             clobberByDefault = true;
             linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
             users.${username} = {
@@ -42,6 +48,7 @@
                 mate.atril
                 nix-tree
                 gcc
+                vesktop
               ];
             };
           };
@@ -49,7 +56,7 @@
             isNormalUser = true;
             # so you can login the first time.
             # PLEASE change this after logging in :prayge:
-            home = "/home/kiana";
+            home = "/home/${username}";
             extraGroups = [
               "wheel"
               "video"

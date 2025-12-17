@@ -27,6 +27,7 @@
           programs.mango.enable = true;
           hj = {
             packages = with pkgs; [
+              kdePackages.qt5compat
               wl-clip-persist
               wl-clipboard
               cliphist

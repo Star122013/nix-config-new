@@ -5,6 +5,7 @@
 {
   core = {
     fonts.enable = true;
+    hjem = true;
     grub.enable = true;
     hardware.bluetooth = true;
     hardware.pipewire = true;

@@ -8,11 +8,12 @@
     den.url = "github:vic/den";
     flake-aspects.url = "github:vic/flake-aspects";
     import-tree.url = "github:vic/import-tree";
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    determinate.url = "github:DeterminateSystems/nix-src";
     hjem.url = "github:feel-co/hjem";
     hjem.inputs.nixpkgs.follows = "nixpkgs";
 
     # software
+    neovim-nightly-overlay = "github:nix-community/neovim-nightly-overlay";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     nix-index-database.url = "github:nix-community/nix-index-database";
