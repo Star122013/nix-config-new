@@ -13,7 +13,7 @@
     hjem.inputs.nixpkgs.follows = "nixpkgs";
 
     # software
-    neovim-nightly-overlay = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     nix-index-database.url = "github:nix-community/nix-index-database";
