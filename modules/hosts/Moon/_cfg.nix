@@ -49,7 +49,6 @@
     qq
     go-musicfox
     ayugram-desktop
-    vicinae
   ];
 
 }

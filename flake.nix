@@ -13,6 +13,7 @@
     hjem.inputs.nixpkgs.follows = "nixpkgs";
 
     # software
+    vicinae.url = "github:vicinaehq/vicinae";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     git-hooks-nix.url = "github:cachix/git-hooks.nix";

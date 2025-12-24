@@ -1,8 +1,11 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.aspects.desktop = {
     nixos =
-      { pkgs, ... }:
+      { pkgs, lib, ... }:
+      let
+        vicinae = inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      in
       {
         environment = {
           systemPackages = [ pkgs.kdePackages.polkit-kde-agent-1 ];
@@ -18,6 +21,10 @@
           };
         };
 
+        hj = {
+          packages = [ vicinae ];
+        };
+
         services.greetd = {
           enable = true;
           settings = {
@@ -30,9 +37,9 @@
         };
 
         systemd.user.services.polkit-kde-authentication-agent-1 = {
+          enable = true;
           description = "polkit-kde-authentication-agent-1";
-          wantedBy = [ "graphical-session.target" ];
-          wants = [ "graphical-session.target" ];
+          wantedBy = [ "default.target" ];
           after = [ "graphical-session.target" ];
           serviceConfig = {
             Type = "simple";

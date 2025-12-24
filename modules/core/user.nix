@@ -40,6 +40,7 @@
               enable = true;
               # These are available no matter the host.
               packages = with pkgs; [
+                nheko
                 npins
                 loupe
                 wget

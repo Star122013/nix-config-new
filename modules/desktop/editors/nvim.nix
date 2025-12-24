@@ -33,6 +33,7 @@
             pkgs.tree-sitter
             pkgs.lua-language-server
             pkgs.stylua
+            pkgs.emmylua-ls
           ];
         };
       };
