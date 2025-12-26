@@ -2,13 +2,17 @@
 {
   flake.aspects.desktop = {
     nixos =
-      { pkgs, lib, ... }:
+      { pkgs, ... }:
       let
         vicinae = inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default;
       in
       {
         environment = {
-          systemPackages = [ pkgs.kdePackages.polkit-kde-agent-1 ];
+          systemPackages = with pkgs; [
+            kdePackages.polkit-kde-agent-1
+            kdePackages.qtbase
+            kdePackages.qtwayland
+          ];
           sessionVariables = {
             QT_QPA_PLATFORMTHEME = "qt6ct";
             QT_QPA_PLATFORM = "wayland";

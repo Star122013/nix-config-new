@@ -50,6 +50,7 @@
                 nix-tree
                 gcc
                 vesktop
+                dwt1-shell-color-scripts
               ];
             };
           };
