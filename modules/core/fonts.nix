@@ -34,6 +34,7 @@
               nerd-fonts.symbols-only
               nerd-fonts.jetbrains-mono
               lxgw-wenkai-screen
+              maple-mono.NF-CN
             ];
             fontconfig = {
               defaultFonts = lib.mkForce {
@@ -41,11 +42,11 @@
                 # https://bugreports.qt.io/browse/QTBUG-80434
                 # So put emoji font here.
                 sansSerif = [
-                  "IosevkaCustom Nerd Font"
+                  "Maple Mono NF CN"
                   "LXGW WenKai Screen"
                 ];
                 serif = [
-                  "IosevkaCustom Nerd Font"
+                  "Maple Mono NF CN"
                   "LXGW WenKai Screen"
                 ];
                 monospace = [

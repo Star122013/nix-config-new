@@ -28,6 +28,7 @@
     foot.enable = true;
     fcitx.enable = true;
     helix.enable = true;
+    kitty.enable = true;
   };
 
   shell = {

@@ -26,7 +26,9 @@
         };
 
         hj = {
-          packages = [ vicinae ];
+          packages = [
+            vicinae
+          ];
         };
 
         services.greetd = {
