@@ -11,6 +11,7 @@
       let
         inherit (lib) mkOption types mkIf;
         cfg = config.core.fonts;
+        jetbrains-maple-mono = pkgs.callPackage ../../packages/JetBrainsMapleMono.nix { };
       in
       {
         options.core.fonts = {
@@ -26,6 +27,7 @@
             fontDir.enable = true;
             enableDefaultPackages = false;
             packages = with pkgs; [
+              jetbrains-maple-mono
               noto-fonts # Base Noto Fonts
               noto-fonts-cjk-sans
               noto-fonts-cjk-serif
@@ -42,14 +44,15 @@
                 # https://bugreports.qt.io/browse/QTBUG-80434
                 # So put emoji font here.
                 sansSerif = [
-                  "Maple Mono NF CN"
+                  "JetBrains Maple Mono"
                   "LXGW WenKai Screen"
                 ];
                 serif = [
-                  "Maple Mono NF CN"
+                  "JetBrains Maple Mono"
                   "LXGW WenKai Screen"
                 ];
                 monospace = [
+                  "JetBrains Maple Mono"
                 ];
                 emoji = [
                   "Noto Color Emoji"
@@ -63,7 +66,7 @@
                       <string>zh</string>
                     </test>
                     <edit name="family" mode="append" binding="strong">
-                      <string>LXGW WenKai Screen</string>
+                      <string>JetBrains Maple Mono</string>
                     </edit>
                   </match>'';
             };

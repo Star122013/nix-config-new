@@ -50,6 +50,9 @@
     qq
     go-musicfox
     ayugram-desktop
+    typora
+    chromium
+    google-chrome
   ];
 
 }
