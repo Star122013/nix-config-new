@@ -30,13 +30,24 @@
               fcitx5 = {
                 waylandFrontend = true;
                 addons = with pkgs; [
-                  kdePackages.fcitx5-chinese-addons
                   fcitx5-pinyin-moegirl
                   fcitx5-pinyin-zhwiki
                   fcitx5-rose-pine
+                  # Rime
+                  (fcitx5-rime.override {
+                    rimeDataPkgs = [
+                      rime-wanxiang
+                    ];
+                  })
                 ];
               };
             };
+          };
+          hj = {
+            files.".local/share/fcitx5/rime/default.custom.yaml".text = ''
+                    patch:
+              __include: wanxiang_suggested_default:/
+            '';
           };
         };
       };
