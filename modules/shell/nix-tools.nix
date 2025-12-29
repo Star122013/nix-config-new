@@ -49,7 +49,18 @@
           nix.gc.automatic = true;
           services.angrr = {
             enable = true;
-            period = "2weeks";
+            settings = {
+              temporary-root-policies = {
+                direnv = {
+                  path-regex = "/\\.direnv/";
+                  period = "14d";
+                };
+                result = {
+                  path-regex = "/result[^/]*$";
+                  period = "3d";
+                };
+              };
+            };
           };
 
           environment.systemPackages = [ pkgs.comma-with-db ];

@@ -25,6 +25,7 @@
         config = mkIf cfg.enable {
           hj = {
             packages = with pkgs; [
+              fd
               jq
               ripgrep
               eza

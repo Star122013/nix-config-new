@@ -45,11 +45,9 @@
                 # So put emoji font here.
                 sansSerif = [
                   "JetBrains Maple Mono"
-                  "LXGW WenKai Screen"
                 ];
                 serif = [
                   "JetBrains Maple Mono"
-                  "LXGW WenKai Screen"
                 ];
                 monospace = [
                   "JetBrains Maple Mono"

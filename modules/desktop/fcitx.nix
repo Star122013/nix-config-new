@@ -30,9 +30,11 @@
               fcitx5 = {
                 waylandFrontend = true;
                 addons = with pkgs; [
+                  librime
                   fcitx5-pinyin-moegirl
                   fcitx5-pinyin-zhwiki
                   fcitx5-rose-pine
+                  catppuccin-fcitx5
                   # Rime
                   (fcitx5-rime.override {
                     rimeDataPkgs = [

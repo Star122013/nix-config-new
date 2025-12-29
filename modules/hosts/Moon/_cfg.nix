@@ -50,9 +50,18 @@
     qq
     go-musicfox
     ayugram-desktop
-    typora
-    chromium
     google-chrome
+    codex
+    zed-editor-fhs
+    (pkgs.symlinkJoin {
+      name = "typora-wrapped";
+      paths = [ pkgs.typora ];
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/typora \
+          --add-flags "--enable-wayland-ime --wayland-text-input-version=3" 
+      '';
+    })
   ];
 
 }

@@ -43,7 +43,6 @@
         };
 
         systemd.user.services.polkit-kde-authentication-agent-1 = {
-          enable = true;
           description = "polkit-kde-authentication-agent-1";
           wantedBy = [ "default.target" ];
           after = [ "graphical-session.target" ];
