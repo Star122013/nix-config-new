@@ -29,6 +29,7 @@
     fcitx.enable = true;
     helix.enable = true;
     kitty.enable = true;
+    game.enable = true;
   };
 
   shell = {
@@ -52,7 +53,6 @@
     ayugram-desktop
     google-chrome
     codex
-    zed-editor-fhs
     (pkgs.symlinkJoin {
       name = "typora-wrapped";
       paths = [ pkgs.typora ];

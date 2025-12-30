@@ -33,6 +33,8 @@
 
               inputs.devbox.packages.${pkgs.stdenv.hostPlatform.system}.default
               nix-tree
+              nixfmt-rfc-style
+              nixd
 
               mise
               bat
