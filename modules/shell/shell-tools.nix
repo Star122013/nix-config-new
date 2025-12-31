@@ -35,6 +35,8 @@
               nix-tree
               nixfmt-rfc-style
               nixd
+              statix
+              deadnix
 
               mise
               bat

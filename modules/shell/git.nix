@@ -41,6 +41,7 @@
           };
           programs.git = {
             enable = true;
+            lfs.enable = true;
             config = {
               user = {
                 inherit (cfg) name email;
@@ -51,7 +52,6 @@
               url = {
                 "https://github.com/" = {
                   insteadOf = [
-                    "gh:"
                     "github:"
                   ];
                 };

@@ -40,6 +40,7 @@
     git.email = "hyy122013@outlook.com";
     nix-tools.enable = true;
     yazi.enable = true;
+    docker.enable = true;
   };
 
   network = {
@@ -53,6 +54,8 @@
     ayugram-desktop
     google-chrome
     codex
+    biome
+    kdePackages.qt5compat
     (pkgs.symlinkJoin {
       name = "typora-wrapped";
       paths = [ pkgs.typora ];

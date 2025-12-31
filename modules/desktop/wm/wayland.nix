@@ -12,6 +12,7 @@
             kdePackages.polkit-kde-agent-1
             kdePackages.qtbase
             kdePackages.qtwayland
+            inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
           ];
           sessionVariables = {
             QT_QPA_PLATFORMTHEME = "qt6ct";

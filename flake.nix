@@ -13,6 +13,10 @@
     hjem.inputs.nixpkgs.follows = "nixpkgs";
 
     # software
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vicinae.url = "github:vicinaehq/vicinae";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
