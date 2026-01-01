@@ -4,6 +4,7 @@
 }:
 {
   core = {
+    nix.enableDix = true;
     fonts.enable = true;
     hjem = true;
     grub.enable = true;
@@ -15,6 +16,7 @@
     security.enable = true;
     username = "kiana";
     nushell.enable = true;
+    amdgpu.enable = true;
   };
 
   desktop = {
@@ -55,6 +57,7 @@
     google-chrome
     codex
     biome
+    piliplus
     kdePackages.qt5compat
     (pkgs.symlinkJoin {
       name = "typora-wrapped";

@@ -1,17 +1,40 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.aspects.core = {
     nixos =
       {
         pkgs,
         lib,
+        config,
         ...
       }:
+      let
+        inherit (lib) mkOption mkIf types;
+        cfg = config.core.nix;
+      in
       {
+        options.core.nix = {
+          enableDix = mkOption {
+            type = types.bool;
+            default = false;
+            description = "dix package";
+          };
+          enableLix = mkOption {
+            type = types.bool;
+            default = false;
+            description = "enable lix eval";
+          };
+        };
 
         config = {
           nix = {
-            package = pkgs.lixPackageSets.latest.lix;
+            package =
+              if cfg.enableDix then
+                inputs.determinate.packages.${pkgs.stdenv.hostPlatform.system}.default
+              else if cfg.enableLix then
+                pkgs.lixPackageSets.latest.lix
+              else
+                pkgs.nix;
             channel.enable = false;
             settings = {
               max-jobs = "auto";
@@ -36,16 +59,18 @@
             };
           };
           nixpkgs.flake.setNixPath = true;
-          nixpkgs.overlays = lib.mkAfter [
-            (_final: prev: {
-              inherit (prev.lixPackageSets.latest)
-                nixpkgs-review
-                nix-eval-jobs
-                nix-fast-build
-                colmena
-                ;
-            })
-          ];
+          nixpkgs.overlays = mkIf cfg.enableLix (
+            lib.mkAfter [
+              (_final: prev: {
+                inherit (prev.lixPackageSets.latest)
+                  nixpkgs-review
+                  nix-eval-jobs
+                  nix-fast-build
+                  colmena
+                  ;
+              })
+            ]
+          );
         };
       };
   };
