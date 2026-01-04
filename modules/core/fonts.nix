@@ -44,13 +44,13 @@
                 # https://bugreports.qt.io/browse/QTBUG-80434
                 # So put emoji font here.
                 sansSerif = [
-                  "JetBrains Maple Mono"
+                  "Maple Mono NF CN"
                 ];
                 serif = [
-                  "JetBrains Maple Mono"
+                  "Maple Mono NF CN"
                 ];
                 monospace = [
-                  "JetBrains Maple Mono"
+                  "Maple Mono NF CN"
                 ];
                 emoji = [
                   "Noto Color Emoji"
@@ -64,7 +64,7 @@
                       <string>zh</string>
                     </test>
                     <edit name="family" mode="append" binding="strong">
-                      <string>JetBrains Maple Mono</string>
+                      <string>Maple Mono NF CN</string>
                     </edit>
                   </match>'';
             };

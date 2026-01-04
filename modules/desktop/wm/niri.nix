@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.aspects.desktop = {
     nixos =
@@ -24,6 +24,7 @@
         config = mkIf cfg.enable {
           programs.niri = {
             enable = true;
+            package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
           };
 
           hj.packages = with pkgs; [

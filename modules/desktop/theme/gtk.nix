@@ -31,7 +31,7 @@
           hj.files.".gtkrc-2.0".text = ''
             gtk-cursor-theme-name = "Bibata-Modern-Ice"
             gtk-cursor-theme-size = 24
-            gtk-font-name = "LXGW Wenkai Screen 14"
+            gtk-font-name = "JetBrains Maple Mono 14"
             gtk-icon-theme-name = "rose-pine-icons"
             gtk-theme-name = "rose-pine-gtk"
             gtk-can-change-accels = 1
@@ -49,7 +49,7 @@
             gtk-cursor-theme-size=24
             gtk-decoration-layout=icon,menu:minimize,maximize,close
             gtk-enable-animations=true
-            gtk-font-name=LXGW Wenkai Screen 14
+            gtk-font-name=JetBrains Maple Mono 14
             gtk-icon-theme-name=rose-pine-icons
             gtk-primary-button-warps-slider=true
             gtk-sound-theme-name=ocean
@@ -62,7 +62,7 @@
             gtk-cursor-theme-size=24
             gtk-decoration-layout=icon,menu:minimize,maximize,close
             gtk-enable-animations=true
-            gtk-font-name=LXGW Wenkai Screen 14
+            gtk-font-name=JetBrains Maple Mono 14
             gtk-icon-theme-name=rose-pine-icons
             gtk-primary-button-warps-slider=true
             gtk-sound-theme-name=ocean

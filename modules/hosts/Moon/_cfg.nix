@@ -20,11 +20,13 @@
   };
 
   desktop = {
+    wayland.enable = true;
     qt.enable = true;
     gtk.enable = true;
     firefox.enable = true;
     mangowc.enable = true;
-    niri.enable = true;
+    niri.enable = false;
+    hyprland.enable = false;
     noctalia.enable = true;
     nvim.enable = true;
     foot.enable = true;
@@ -51,6 +53,7 @@
   };
 
   hj.packages = with pkgs; [
+    mpv
     qq
     go-musicfox
     ayugram-desktop
@@ -58,6 +61,7 @@
     codex
     biome
     piliplus
+    marksman
     kdePackages.qt5compat
     (pkgs.symlinkJoin {
       name = "typora-wrapped";

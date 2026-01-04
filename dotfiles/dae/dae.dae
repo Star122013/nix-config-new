@@ -13,6 +13,7 @@ global {
 
   # 绑定的wan口
   wan_interface: auto
+  lan_interface: docker0
 
   # domain domain+ domain++ ip 四种模式
   dial_mode: domain

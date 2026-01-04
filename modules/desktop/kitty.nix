@@ -30,7 +30,7 @@
         config = mkIf cfg.enable {
           hj = {
             packages = [ cfg.package ];
-            files.".config/kitty".source = ./../../dotfiles/kitty;
+            files.".config/kitty/kitty.conf".source = ./../../dotfiles/kitty/kitty.conf;
           };
         };
       };

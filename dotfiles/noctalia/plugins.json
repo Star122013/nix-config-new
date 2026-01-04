@@ -7,6 +7,12 @@
         }
     ],
     "states": {
+        "fancy-audiovisualizer": {
+            "enabled": true
+        },
+        "mangowc-layout-switcher": {
+            "enabled": true
+        }
     },
     "version": 1
 }
