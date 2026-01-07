@@ -35,7 +35,7 @@
 
   boot.extraModulePackages = [ ];
   environment.systemPackages = with pkgs; [
-    linuxKernel.packages.linux_6_17.it87
+    linuxKernel.packages.linux_6_18.it87
     lm_sensors
   ];
   environment.etc."sysconfig/lm_sensors".text = ''

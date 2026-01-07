@@ -15,7 +15,9 @@
     network.network-manager = true;
     security.enable = true;
     username = "kiana";
-    nushell.enable = true;
+    nushell.enable = false;
+    fish.enable = true;
+    zsh.enable = false;
     amdgpu.enable = true;
   };
 
@@ -31,6 +33,7 @@
     nvim.enable = true;
     foot.enable = true;
     fcitx.enable = true;
+    emacs.enable = true;
     helix.enable = true;
     kitty.enable = true;
     game.enable = true;

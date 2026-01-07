@@ -27,7 +27,7 @@
               generator = lib.generators.toINI { };
               value = {
                 Appearance = {
-                  icon_theme = "Papirus-Dark";
+                  icon_theme = "WhiteSur-dark";
                   custom_palette = true;
                   standard_dialogs = "xdgdesktopportal";
                   style = "Adwaita-Dark";
@@ -56,6 +56,7 @@
               adwaita-qt
               papirus-icon-theme
               adwaita-qt6
+              whitesur-icon-theme
             ];
           };
         };

@@ -26,11 +26,6 @@
     devbox.url = "github:jetify-com/devbox";
     mango.url = "github:DreamMaoMao/mango";
     mango.inputs.nixpkgs.follows = "nixpkgs";
-    dgop.url = "github:AvengeMedia/dgop";
-    dgop.inputs.nixpkgs.follows = "nixpkgs";
-    dankMaterialShell.url = "github:AvengeMedia/DankMaterialShell";
-    dankMaterialShell.inputs.nixpkgs.follows = "nixpkgs";
-    dankMaterialShell.inputs.dgop.follows = "dgop";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
     grub2-themes.url = "github:vinceliuice/grub2-themes";

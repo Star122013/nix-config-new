@@ -35,7 +35,6 @@
               material-symbols
               nerd-fonts.symbols-only
               nerd-fonts.jetbrains-mono
-              lxgw-wenkai-screen
               maple-mono.NF-CN
             ];
             fontconfig = {

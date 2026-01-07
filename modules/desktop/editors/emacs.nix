@@ -10,28 +10,28 @@
       }:
       let
         inherit (lib) mkOption types mkIf;
-        cfg = config.desktop.kitty;
+        cfg = config.desktop.emacs;
       in
       {
-        options.desktop.kitty = {
+        options.desktop.emacs = {
           enable = mkOption {
             type = types.bool;
             default = false;
-            description = "Enable kitty.";
+            description = "Enable desktop.emacs.";
           };
 
           package = mkOption {
             type = types.package;
-            default = pkgs.kitty;
-            description = "The kitty package to install.";
+            default = pkgs.emacs;
+            description = "The emacs package to install.";
           };
         };
 
         config = mkIf cfg.enable {
           hj = {
-            packages = [ cfg.package ];
-            files.".config/kitty/kitty.conf".source = ./../../dotfiles/kitty/kitty.conf;
-            files.".config/kitty/theme/mocha.conf".source = ./../../dotfiles/kitty/theme/mocha.conf;
+            packages = [
+              pkgs.emacs
+            ];
           };
         };
       };

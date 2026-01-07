@@ -34,6 +34,7 @@
             pkgs.lua-language-server
             pkgs.stylua
             pkgs.emmylua-ls
+            pkgs.neovide
           ];
         };
       };

@@ -49,7 +49,6 @@
                 mate.atril
                 nix-tree
                 gcc
-                vesktop
                 dwt1-shell-color-scripts
               ];
             };
@@ -66,7 +65,7 @@
               "networkmanager"
               "docker"
             ];
-            shell = pkgs.nushell;
+            shell = pkgs.fish;
             ignoreShellProgramCheck = true;
           };
           xdg.mime.defaultApplications = {

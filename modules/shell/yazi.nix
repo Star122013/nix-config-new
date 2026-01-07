@@ -27,6 +27,7 @@
               _7zz = _7zz-rar; # Support for RAR extraction
             })
           ];
+          hj.files.".config/yazi".source = ./../../dotfiles/yazi;
         };
       };
   };

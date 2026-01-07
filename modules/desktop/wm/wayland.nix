@@ -31,7 +31,7 @@
             sessionVariables = {
               QT_QPA_PLATFORMTHEME = "qt6ct";
               QT_QPA_PLATFORM = "wayland";
-              GTK_THEME = "Papirus";
+              GTK_THEME = "WhiteSur-Dark";
               MOZ_ENABLE_WAYLAND = "1";
               ELECTRON_OZONE_PLATFORM_HINT = "auto";
               NIXOS_OZONE_WL = "1";
@@ -50,7 +50,7 @@
             enable = true;
             settings = {
               default_session = {
-                command = "${pkgs.tuigreet}/bin/tuigreet --cmd Hyprland";
+                command = "${pkgs.tuigreet}/bin/tuigreet --cmd mango";
                 user = "kiana";
               };
             };
