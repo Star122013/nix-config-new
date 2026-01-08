@@ -1,10 +1,6 @@
-# ==============================================================================
-# 1. 全局配置 (必须放在最前面！)
-# ==============================================================================
 add_newline = true
 palette = "catppuccin_mocha"
 
-# 核心布局：手动构建树状结构
 format = """
 [╭─](green)\
 $os\
@@ -19,9 +15,6 @@ $git_status\
 $line_break\
 $character"""
 
-# ==============================================================================
-# 2. 调色板定义 (Catppuccin Mocha)
-# ==============================================================================
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
@@ -50,25 +43,19 @@ base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
 
-# ==============================================================================
-# 3. 模块配置
-# ==============================================================================
-
-# [OS 图标] - 增加 NixOS
 [os]
 disabled = false
-style = "bold sapphire" # 这里的蓝色很配 NixOS
+style = "bold sapphire"
 format = "[$symbol]($style)"
 
 [os.symbols]
-NixOS = " "   # NixOS 图标
+NixOS = " "
 Windows = " "
 Ubuntu = " "
 Macos = " "
 Linux = " "
 Arch = " "
 
-# [目录]
 [directory]
 style = "bold blue"
 format = "[  $path ]($style)"
@@ -76,14 +63,12 @@ truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
 
-# [Python] - 已去掉 🐍，改为  
 [python]
 style = "bold lavender"
 symbol = " "
 format = '[ via ](overlay0)[${symbol}${version}]($style)'
 version_format = "v${raw}"
 
-# [Nix Shell] - 当你在 nix shell 环境中时显示
 [nix_shell]
 symbol = " "
 style = "bold sapphire"
@@ -91,31 +76,26 @@ format = '[ via ](overlay0)[$symbol$state]($style)'
 impure_msg = "(impure)"
 pure_msg = "(pure)"
 
-# [Nodejs]
 [nodejs]
 style = "bold green"
 format = '[ via ](overlay0)[${symbol}${version}]($style)'
 symbol = " "
 
-# [Rust]
 [rust]
 style = "bold red"
 format = '[ via ](overlay0)[${symbol}${version}]($style)'
 symbol = " "
 
-# [Git Branch]
 [git_branch]
 symbol = " "
 style = "mauve"
 format = '[ on ](overlay0)[$symbol$branch]($style)'
 
-# [Git Status]
 [git_status]
 style = "bold red"
 format = '([$all_status$ahead_behind]($style))'
 
-# [提示符] - 第二行
 [character]
-success_symbol = "[╰─ :](bold green)"
-error_symbol = "[╰─ :](bold red)"
+success_symbol = "[╰─](bold green)"
+error_symbol = "[╰─](bold red)"
 vimcmd_symbol = "[╰─ ❮](green)"

@@ -56,6 +56,11 @@ group {
 routing {
   #pname(dnsmasq, systemd-resolved) && l4proto(udp) && dport(53) -> must_direct
   pname(NetworkManager) -> direct
+  pname(mihomo) -> must_direct
+  pname(flclash) -> must_direct
+  pname(clash) -> must_direct
+  pname(clash-meta) -> must_direct
+
   pname(Core) -> must_direct
   pname(throne) -> must_direct
   pname(Throne) -> must_direct

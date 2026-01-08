@@ -31,6 +31,7 @@
               ripgrep
               eza
               zoxide
+              tmux
 
               inputs.devbox.packages.${pkgs.stdenv.hostPlatform.system}.default
               nix-tree

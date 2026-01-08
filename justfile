@@ -1,6 +1,8 @@
 update:
     nix flake update --option access-tokens "github.com=$(gh auth token)"
-rebuild:
-    nh os switch . --show-trace --ask
+reboot:
+    nh os boot . --show-trace --ask && reboot
 push:
     git add . && gitmoji -c && git push
+switch:
+    nh os switch . --show-trace --ask

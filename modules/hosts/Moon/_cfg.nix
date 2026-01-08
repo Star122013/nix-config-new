@@ -4,7 +4,8 @@
 }:
 {
   core = {
-    nix.enableDix = true;
+    nix.enableDix = false;
+    nix.enableLix = true;
     fonts.enable = true;
     hjem = true;
     grub.enable = true;
@@ -37,6 +38,7 @@
     helix.enable = true;
     kitty.enable = true;
     game.enable = true;
+    flatpak.enable = true;
   };
 
   shell = {
@@ -52,11 +54,12 @@
 
   network = {
     proxy.enable = true;
-    proxy.withGui = pkgs.throne;
+    proxy.withGui = pkgs.flclash;
   };
 
   hj.packages = with pkgs; [
     mpv
+    lx-music-desktop
     qq
     go-musicfox
     ayugram-desktop
