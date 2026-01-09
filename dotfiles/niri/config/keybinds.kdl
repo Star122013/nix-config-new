@@ -9,8 +9,7 @@
 binds {
     Mod+Shift+Slash     { show-hotkey-overlay; }
     Mod+Q               { close-window; }
-    Mod+Return          { spawn "foot"; }
-    Mod+B               { spawn "firefox"; }
+    Mod+Return          { spawn "kitty"; }
     Mod+E               { spawn "nautilus"; }
     Mod+Space           { spawn "vicinae" "toggle"; }
     Mod+F               { fullscreen-window; }

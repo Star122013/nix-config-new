@@ -23,12 +23,14 @@
         config = lib.mkIf cfg.enable {
           environment = {
             systemPackages = with pkgs; [
+              lxqt.xdg-desktop-portal-lxqt
               kdePackages.polkit-kde-agent-1
               kdePackages.qtbase
               kdePackages.qtwayland
               inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
             ];
             sessionVariables = {
+              XDG_SESSION_TYPE = "wayland";
               QT_QPA_PLATFORMTHEME = "qt6ct";
               QT_QPA_PLATFORM = "wayland";
               GTK_THEME = "WhiteSur-Dark";
@@ -50,7 +52,7 @@
             enable = true;
             settings = {
               default_session = {
-                command = "${pkgs.tuigreet}/bin/tuigreet --cmd mango";
+                command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri";
                 user = "kiana";
               };
             };
@@ -58,7 +60,6 @@
           };
 
           systemd.user.services.polkit-kde-authentication-agent-1 = {
-            enable = true;
             description = "polkit-kde-authentication-agent-1";
             wantedBy = [ "graphical-session.target" ];
             partOf = [ "graphical-session.target" ];

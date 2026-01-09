@@ -33,6 +33,7 @@
           (mkAliasOptionModule [ "hj" ] [ "hjem" "users" username ])
         ];
         config = {
+          services.userborn.enable = true;
           hjem = lib.mkIf cfg {
             clobberByDefault = true;
             linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;

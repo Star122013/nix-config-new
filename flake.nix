@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-    den.url = "github:vic/den";
     flake-aspects.url = "github:vic/flake-aspects";
     import-tree.url = "github:vic/import-tree";
     determinate.url = "github:DeterminateSystems/nix-src";
@@ -13,8 +12,9 @@
     hjem.inputs.nixpkgs.follows = "nixpkgs";
 
     # software
+    vaultix.url = "github:milieuim/vaultix";
     hyprland.url = "github:hyprwm/Hyprland";
-    niri.url = "github:YaLTeR/niri";
+    niri-flake.url = "github:sodiboo/niri-flake";
     quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
     quickshell.inputs.nixpkgs.follows = "nixpkgs";
     vicinae.url = "github:vicinaehq/vicinae";

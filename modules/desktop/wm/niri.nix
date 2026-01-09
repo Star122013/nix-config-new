@@ -13,6 +13,7 @@
         cfg = config.desktop.niri;
       in
       {
+        imports = [ inputs.niri-flake.nixosModules.niri ];
         options.desktop.niri = {
           enable = mkOption {
             type = types.bool;
@@ -24,12 +25,17 @@
         config = mkIf cfg.enable {
           programs.niri = {
             enable = true;
-            package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
+            package = pkgs.niri-unstable;
           };
+
+          nixpkgs.overlays = lib.mkAfter [
+            inputs.niri-flake.overlays.niri
+          ];
 
           hj.packages = with pkgs; [
             xdg-desktop-portal
             xdg-desktop-portal-gtk
+            xdg-desktop-portal-gnome
             xwayland-satellite
             nautilus
             swww

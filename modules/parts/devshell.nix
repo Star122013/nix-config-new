@@ -20,7 +20,7 @@
           just
           nixd
           nil
-          nixfmt-rfc-style
+          nixfmt
           nix-output-monitor
           alejandra
           statix

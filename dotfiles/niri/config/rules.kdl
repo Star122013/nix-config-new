@@ -49,14 +49,15 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id="^com.ayugram.desktop$" title="^Media viewer$"
+    match app-id="^QQ$" title="^图片查看器$"
     open-floating true
     default-column-width { proportion 0.5; }
-    default-window-height { fixed 500; }
+    default-window-height { fixed 700; }
     open-maximized false
 }
+
 window-rule {
-    match app-id="^org.telegram.desktop$" title="^Media viewer$"
+    match app-id="^com.ayugram.desktop$" title="^Media viewer$"
     open-floating true
     default-column-width { proportion 0.5; }
     default-window-height { fixed 500; }
@@ -70,7 +71,6 @@ window-rule {
 window-rule {
     match app-id="org.telegram.desktop$"
     match app-id="zen$"
-    match app-id="vesktop$"
     match app-id="thunar$"
     match app-id="dolphin$"
     match app-id="obsidian$"
@@ -96,7 +96,7 @@ window-rule {
     draw-border-with-background false
     match app-id="kitty$"
     match app-id="com.mitchellh.ghostty$"
- // opacity 0.70
+    match app-id="neovide$"
     open-on-workspace "code"
 }
 window-rule {
@@ -114,5 +114,8 @@ window-rule {
 window-rule {
     match app-id="^vesktop$"
     match app-id="^org.telegram.desktop$"
+    match app-id="^com.ayugram.desktop$"
+    match app-id="^QQ$"
+    default-column-width { proportion 0.5; }
     open-on-workspace "chat"
 }

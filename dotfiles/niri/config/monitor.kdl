@@ -9,7 +9,6 @@
 // HACK: Check `niri msg outputs` to see all about monitors
 output "DP-2" {
     mode "2560x1440@170.003"
-    scale 1.15
+    scale 1.0
  // [Possible choices are "1.5" or "150%" too]    transform "normal"
 }
-

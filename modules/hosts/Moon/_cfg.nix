@@ -5,7 +5,7 @@
 {
   core = {
     nix.enableDix = false;
-    nix.enableLix = true;
+    nix.enableLix = false;
     fonts.enable = true;
     hjem = true;
     grub.enable = true;
@@ -27,8 +27,8 @@
     qt.enable = true;
     gtk.enable = true;
     firefox.enable = true;
-    mangowc.enable = true;
-    niri.enable = false;
+    mangowc.enable = false;
+    niri.enable = true;
     hyprland.enable = false;
     noctalia.enable = true;
     nvim.enable = true;
@@ -58,6 +58,7 @@
   };
 
   hj.packages = with pkgs; [
+    throne
     mpv
     lx-music-desktop
     qq
